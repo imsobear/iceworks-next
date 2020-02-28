@@ -1,0 +1,42 @@
+{
+  "name": "iceworks-next",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*",
+    "extensions/*",
+    "app"
+  ],
+  "scripts": {
+    "setup": "lerna clean --yes && npm run packages:build && lerna link",
+    "test": "jest",
+    "install:deps": "rm -rf node_modules && ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ yarn install --registry=http://registry.npm.taobao.org",
+    "packages:watch": "ts-node ./scripts/watch.ts",
+    "packages:build": "npm run packages:clean && ts-node ./scripts/build.ts",
+    "packages:clean": "rm -rf ./packages/*/lib",
+    "app:start": "electron ./app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imsobear/iceworks-next.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imsobear/iceworks-next/issues"
+  },
+  "homepage": "https://github.com/imsobear/iceworks-next#readme",
+  "devDependencies": {
+    "@types/jest": "^25.1.3",
+    "execa": "^4.0.0",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.6",
+    "jest": "^25.1.0",
+    "lerna": "^3.20.2",
+    "nsfw": "^1.2.7",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.2",
+    "electron": "^8.0.2"
+  }
+}
