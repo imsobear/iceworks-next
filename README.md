@@ -8,7 +8,7 @@ install deps:
 ```bash
 $ yarn run install:deps
 # build packages and run link
-$ npm run setup
+$ yarn run setup
 
 # start electron app
 $ yarn run app:start
