@@ -1,20 +1,11 @@
 {
   "name": "@iceworks/add-block",
   "version": "1.0.1",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/imsobear/iceworks-next.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/imsobear/iceworks-next/issues"
-  },
-  "homepage": "https://github.com/imsobear/iceworks-next#readme",
   "dependencies": {
     "fs-extra": "^8.1.0"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "be1fb9567409d8ef9bab1898a0dc98022c6250d6"
 }

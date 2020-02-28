@@ -4,17 +4,7 @@
   "files": [
     "package.json"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/imsobear/iceworks-next.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/imsobear/iceworks-next/issues"
-  },
-  "homepage": "https://github.com/imsobear/iceworks-next#readme"
+  "publishConfig": {
+    "access": "public"
+  }
 }
