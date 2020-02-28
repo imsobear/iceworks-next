@@ -16,6 +16,10 @@ $ yarn run app:start
 # packages
 $ yarn run packages:watch
 $ yarn run packages:build
+
+# publish packages
+$ yarn run publish
+$ yarn run publish:beta
 ```
 
 Directory:

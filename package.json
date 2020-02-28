@@ -8,14 +8,15 @@
     "app"
   ],
   "scripts": {
-    "setup": "lerna clean --yes && npm run packages:build && lerna link",
+    "setup": "lerna clean --yes && npm run packages:build && npm run link",
+    "link": "lerna link",
     "test": "jest",
     "install:deps": "rm -rf node_modules && ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ yarn install --registry=http://registry.npm.taobao.org",
     "packages:watch": "ts-node ./scripts/watch.ts",
     "packages:build": "npm run packages:clean && ts-node ./scripts/build.ts",
     "packages:clean": "rm -rf ./packages/*/lib",
-    "publish": "npm run packages:build && lerna publish --contents packages",
-    "publish:beta": "npm run packages:build && lerna publish --contents packages --dist-tag beta",
+    "publish": "npm run packages:build && lerna publish",
+    "publish:beta": "npm run packages:build && lerna publish --dist-tag beta",
     "app:start": "electron ./app",
     "lint": "eslint --cache --ext .ts,.tsx ./",
     "coverage": "codecov"
