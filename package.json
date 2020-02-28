@@ -14,8 +14,8 @@
     "packages:watch": "ts-node ./scripts/watch.ts",
     "packages:build": "npm run packages:clean && ts-node ./scripts/build.ts",
     "packages:clean": "rm -rf ./packages/*/lib",
-    "packages:publish": "npm run packages:build && lerna publish --contents packages",
-    "packages:publish:beta": "npm run packages:build && lerna publish --contents packages --dist-tag beta",
+    "publish": "npm run packages:build && lerna publish --contents packages",
+    "publish:beta": "npm run packages:build && lerna publish --contents packages --dist-tag beta",
     "app:start": "electron ./app",
     "lint": "eslint --cache --ext .ts,.tsx ./",
     "coverage": "codecov"
