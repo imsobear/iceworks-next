@@ -6,5 +6,10 @@
     "packages/*",
     "extensions/*",
     "app"
-  ]
+  ],
+  "command": {
+    "publish": {
+      "message": "chore(release): publish"
+    }
+  }
 }
