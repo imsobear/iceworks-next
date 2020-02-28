@@ -2,8 +2,11 @@ sudo: required
 language: node_js
 node_js:
   - '10'
-script:
+  - '12'
+install:
   - npm run install:deps
+script:
+  - npm run setup
   - npm run lint
   - npm run test
 after_success:
