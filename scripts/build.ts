@@ -1,7 +1,8 @@
+/* eslint-disable no-await-in-loop, no-restricted-syntax */
 import * as glob from 'glob'
 import * as path from 'path'
-import { run } from './fn/shell'
 import * as fs from 'fs-extra'
+import { run } from './fn/shell'
 
 (async () => {
   await run('npx tsc --build ./tsconfig.json')

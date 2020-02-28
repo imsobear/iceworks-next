@@ -11,6 +11,4 @@ node_modules
 .happypack
 coverage/
 tmp/
-
-# 工具包的构建目录
-packages/*/lib
+lib/
