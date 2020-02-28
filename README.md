@@ -3,7 +3,7 @@
 
 ## Develop
 
-install deps:
+CLI:
 
 ```bash
 $ yarn run install:deps
@@ -16,4 +16,16 @@ $ yarn run app:start
 # packages
 $ yarn run packages:watch
 $ yarn run packages:build
+```
+
+Directory:
+
+```md
+.
+├── app               // Electron app
+├── extensions        // VS Code extensions
+├── packages          // Common packages
+│   ├── add-block
+│   └── config
+└── scripts
 ```

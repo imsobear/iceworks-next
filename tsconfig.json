@@ -2,6 +2,6 @@
   "files": [],
   "references": [
     { "path": "packages/add-block" },
-    { "path": "packages/generate-project" }
+    { "path": "packages/config" }
   ]
 }

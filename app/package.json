@@ -1,6 +1,7 @@
 {
-  "name": "iceworks-app",
+  "name": "@iceworks/app",
   "version": "1.0.0",
+  "files": ["package.json"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
