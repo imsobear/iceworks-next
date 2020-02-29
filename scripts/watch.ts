@@ -8,11 +8,12 @@ import { run } from './fn/shell'
 const nsfw = require('nsfw');
 
 (async () => {
-  const fileParten = '*/src/**/!(*.ts|*.tsx)';
-  console.log(`[COPY]: ${fileParten}`);
+  const filePattern = '*/src/**/!(*.ts|*.tsx)';
+  console.log(`[COPY]: ${filePattern}`);
 
   const cwd = path.join(__dirname, '../packages');
-  const files = glob.sync(fileParten, { cwd, nodir: true });
+  const files = glob.sync(filePattern, { cwd, nodir: true });
+
   const fileSet = new Set();
   /* eslint no-restricted-syntax:0 */
   for (const file of files) {
@@ -32,8 +33,9 @@ const nsfw = require('nsfw');
       }
     });
   });
-
   watcher.start();
+
+  // 在这之上的代码都是为了解决 tsc 不支持 copy 非 .ts/.tsx 文件的问题
 
   await run('npx tsc --build ./tsconfig.json -w');
 })().catch((e) => {

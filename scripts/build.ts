@@ -7,6 +7,8 @@ import { run } from './fn/shell'
 (async () => {
   await run('npx tsc --build ./tsconfig.json')
 
+  // 在这之下的代码都是为了解决 tsc 不支持 copy 非 .ts/.tsx 文件的问题
+
   const fileParten = '*/src/**/!(*.ts|*.tsx)'
   console.log(`[COPY]: ${fileParten}`)
 
