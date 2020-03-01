@@ -12,6 +12,7 @@
     "@iceworks/config": "^1.0.1"
   },
   "devDependencies": {
-    "@types/electron": "^1.6.10"
+    "@types/electron": "^1.6.10",
+    "ice.js": "^1.0.12"
   }
 }

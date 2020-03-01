@@ -7493,7 +7493,7 @@ husky@^4.2.3:
 
 ice.js@^1.0.12:
   version "1.0.12"
-  resolved "http://mirrors.cloud.tencent.com/npm/ice.js/-/ice.js-1.0.12.tgz#0ac7a23c3ff50286d9c733a21723a52164e956d0"
+  resolved "https://registry.yarnpkg.com/ice.js/-/ice.js-1.0.12.tgz#0ac7a23c3ff50286d9c733a21723a52164e956d0"
   integrity sha512-zPGbJzMDb40nakUKoPqeUzRaY2HAJ564E7L2wJNRbk4dDHwqDKAQe7XOge1o6Z52KTJed9v/t3UoZmi8xU9QxQ==
   dependencies:
     "@alib/build-scripts" "^0.1.13"
