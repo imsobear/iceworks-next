@@ -18,6 +18,7 @@
     "publish": "npm run packages:build && lerna publish",
     "publish:beta": "npm run packages:build && lerna publish --dist-tag beta",
     "app:start": "electron ./app",
+    "app:build": "concurrently 'tsc --build ./app/main/tsconfig.json' 'cd app && icejs build'",
     "app:watch": "concurrently 'tsc --build ./app/main/tsconfig.json -w' 'cd app && icejs start'",
     "lint": "eslint --cache --ext .ts,.tsx ./",
     "coverage": "codecov"
