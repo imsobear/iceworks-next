@@ -33,7 +33,7 @@ $ yarn run publish:beta
 
 # add dep to some package
 $ yarn workspace @iceworks/app add <npmName>
-# 请通过官方源安装单个依赖，避免污染 yarn.lock
+# 如果全局指定了 yarn 的 registry，添加依赖时请使用官方源，避免污染 yarn.lock
 $ yarn workspace @iceworks/app add <npmName> --registry https://registry.yarnpkg.com
 ```
 
