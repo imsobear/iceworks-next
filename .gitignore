@@ -16,4 +16,4 @@ tmp/
 packages/*/lib/
 app/main_dist/
 
-*/.ice
+**/.ice/

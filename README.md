@@ -1,11 +1,9 @@
-
 # iceworks-next
 
 <a href="/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license" /></a>
 <a href="https://travis-ci.com/imsobear/iceworks-next"><img src="https://travis-ci.com/imsobear/iceworks-next.svg?branch=master" alt="Build Status" /></a>
 <a href="https://codecov.io/gh/imsobear/iceworks-next"><img src="https://img.shields.io/codecov/c/github/imsobear/iceworks-next/master.svg" alt="Test Coverage" /></a>
 <a href="https://gitter.im/imsobear/iceworks-next"><img src="https://badges.gitter.im/imsobear/iceworks-next.svg" alt="Gitter" /></a>
-
 
 ## Develop
 
@@ -17,8 +15,8 @@ $ yarn run install:deps
 # build packages and run link
 $ yarn run setup
 
-# start electron renderer
-$ yarn run app:web
+# watch electron main & electron renderer
+$ yarn run app:watch
 # start electron app
 $ yarn run app:start
 
@@ -39,9 +37,9 @@ Directory:
 
 ```md
 .
-├── app               // Electron app
-├── extensions        // VS Code extensions
-├── packages          // Common packages
+├── app // Electron app
+├── extensions // VS Code extensions
+├── packages // Common packages
 │   ├── add-block
 │   └── config
 └── scripts
