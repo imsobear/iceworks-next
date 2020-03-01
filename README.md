@@ -17,8 +17,11 @@ $ yarn run install:deps
 # build packages and run link
 $ yarn run setup
 
+# start electron renderer
+$ yarn run app:web
 # start electron app
 $ yarn run app:start
+
 
 # packages
 $ yarn run packages:watch

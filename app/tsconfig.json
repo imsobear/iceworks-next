@@ -5,5 +5,5 @@
     "rootDir": "main",
     "outDir": "main_dist",
   },
-  "exclude": ["src"]
+  "exclude": ["src", "main_dist"]
 }
