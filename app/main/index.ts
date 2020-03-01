@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Modules to control application life and create native browser window
 import * as path from 'path';
 import {app, BrowserWindow} from 'electron';
