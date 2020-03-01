@@ -7,12 +7,8 @@ import { run } from './fn/shell'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const nsfw = require('nsfw');
 
-(async () => {
-  const filePattern = '*/src/**/!(*.ts|*.tsx)';
-  console.log(`[COPY]: ${filePattern}`);
-
-  const cwd = path.join(__dirname, '../packages');
-  const files = glob.sync(filePattern, { cwd, nodir: true });
+async function watchFiles(cwd, ext) {
+  const files = glob.sync(ext, { cwd, nodir: true });
 
   const fileSet = new Set();
   /* eslint no-restricted-syntax:0 */
@@ -24,7 +20,7 @@ const nsfw = require('nsfw');
 
   const watcher = await nsfw(cwd, (e) => {
     e.forEach((e) => {
-      if (e.action === nsfw.actions.CREATED || e.action === nsfw.actions.MODIFIED ||  e.action === nsfw.actions.RENAMED) {
+      if (e.action === nsfw.actions.CREATED || e.action === nsfw.actions.MODIFIED || e.action === nsfw.actions.RENAMED) {
         const filePath = e.newFile ? path.join(e.directory, e.newFile!) : path.join(e.directory, e.file!);
         if (fileSet.has(filePath)) {
           console.log('non-ts change detected:', filePath);
@@ -34,17 +30,24 @@ const nsfw = require('nsfw');
     });
   });
   watcher.start();
+}
 
-  // 在这之上的代码都是为了解决 tsc 不支持 copy 非 .ts/.tsx 文件的问题
-
-  await run('npx tsc --build ./tsconfig.json -w');
-})().catch((e) => {
+watchFiles(path.join(__dirname, '../packages'), '*/src/**/!(*.ts|*.tsx)').catch((e) => {
   console.trace(e);
   process.exit(128);
 });
 
+
+// 在这之上的代码都是为了解决 tsc 不支持 copy 非 .ts/.tsx 文件的问题
+async function tscWatcher() {
+  await run('npx tsc --build ./tsconfig.json -w');
+}
+
+tscWatcher();
+
+
 async function copyOneFile(file, cwd) {
   const from = path.join(cwd, file);
-  const to = path.join(cwd, file.replace(/\/src\//, '/lib/'));
+  const to = path.join(cwd, file.replace(/src\//, '/lib/'));
   await fs.copy(from, to);
 }
