@@ -18,14 +18,19 @@
     "publish": "npm run packages:build && lerna publish",
     "publish:beta": "npm run packages:build && lerna publish --dist-tag beta",
     "app:start": "electron ./app",
+    "app:watch": "concurrently 'tsc --build ./app/tsconfig.json -w' 'cd app && icejs start'",
     "lint": "eslint --cache --ext .ts,.tsx ./",
     "coverage": "codecov"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "npm run lint"
+      "pre-push": "npm run lint",
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "prettier --write"
   },
   "repository": {
     "type": "git",
@@ -39,9 +44,11 @@
   "homepage": "https://github.com/imsobear/iceworks-next#readme",
   "devDependencies": {
     "@ice/spec": "^1.0.1",
+    "@types/execa": "^2.0.0",
     "@types/jest": "^25.1.3",
     "codecov": "^3.6.5",
     "commitlint": "^8.3.5",
+    "concurrently": "^5.1.0",
     "electron": "^8.0.2",
     "eslint": "^6.8.0",
     "execa": "^4.0.0",
@@ -50,10 +57,14 @@
     "husky": "^4.2.3",
     "jest": "^25.1.0",
     "lerna": "^3.20.2",
+    "lint-staged": "^10.0.8",
     "nsfw": "^1.2.7",
     "stylelint": "^13.2.0",
     "ts-jest": "^25.2.1",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.2"
+  },
+  "dependencies": {
+    "ice.js": "^1.0.12"
   }
 }

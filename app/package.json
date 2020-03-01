@@ -1,11 +1,8 @@
 {
   "name": "@iceworks/app",
+  "private": true,
   "version": "1.0.1",
-  "main": "main.js",
-  "files": [
-    "package.json",
-    "main.js"
-  ],
+  "main": "main_dist/index.js",
   "publishConfig": {
     "access": "public"
   },
@@ -13,5 +10,8 @@
   "dependencies": {
     "@iceworks/add-block": "^1.0.1",
     "@iceworks/config": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/electron": "^1.6.10"
   }
 }

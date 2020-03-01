@@ -1,7 +1,11 @@
 {
   "files": [],
   "references": [
-    { "path": "packages/add-block" },
-    { "path": "packages/config" }
+    {
+      "path": "packages/add-block"
+    },
+    {
+      "path": "packages/config"
+    },
   ]
 }

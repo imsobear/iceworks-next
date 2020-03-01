@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.settings.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "rootDir": "main",
+    "outDir": "main_dist",
+  },
+  "exclude": ["src", "main_dist"]
+}
