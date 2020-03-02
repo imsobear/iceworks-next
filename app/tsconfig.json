@@ -2,8 +2,39 @@
   "extends": "../tsconfig.settings.json",
   "compilerOptions": {
     "baseUrl": "./",
-    "rootDir": "main",
-    "outDir": "main_dist",
+    "rootDir": "./",
+    "outDir": "build",
+    "jsx": "react",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "module": "esnext",
+    "target": "es6",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "importHelpers": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "ice": [
+        ".ice/index.ts"
+      ]
+    }
   },
-  "exclude": ["src", "main_dist"]
+  "include": [
+    ".ice",
+    "src"
+  ]
 }

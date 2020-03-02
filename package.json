@@ -11,14 +11,15 @@
     "setup": "lerna clean --yes && npm run packages:build && npm run link",
     "link": "lerna link",
     "test": "jest",
-    "install:deps": "rm -rf node_modules && ELECTRON_MIRROR='https://cdn.npm.taobao.org/dist/electron/' yarn install --registry=http://registry.npm.taobao.org",
+    "install:deps": "rm -rf node_modules && ELECTRON_MIRROR=https://cdn.npm.taobao.org/dist/electron/ SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ yarn install --registry=http://registry.npm.taobao.org",
     "packages:watch": "ts-node ./scripts/watch.ts",
     "packages:build": "npm run packages:clean && ts-node ./scripts/build.ts",
     "packages:clean": "rm -rf ./packages/*/lib",
     "publish": "npm run packages:build && lerna publish",
     "publish:beta": "npm run packages:build && lerna publish --dist-tag beta",
     "app:start": "electron ./app",
-    "app:watch": "concurrently 'tsc --build ./app/tsconfig.json -w' 'cd app && icejs start'",
+    "app:build": "concurrently 'tsc --build ./app/main/tsconfig.json' 'cd app && icejs build'",
+    "app:watch": "concurrently 'tsc --build ./app/main/tsconfig.json -w' 'cd app && icejs start'",
     "lint": "eslint --cache --ext .ts,.tsx ./",
     "coverage": "codecov"
   },
@@ -63,8 +64,5 @@
     "ts-jest": "^25.2.1",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.2"
-  },
-  "dependencies": {
-    "ice.js": "^1.0.12"
   }
 }
