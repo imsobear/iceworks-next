@@ -1,7 +1,7 @@
 import 'jest-extended';
 import * as path from 'path';
 import { tmpdir } from 'os';
-
+import * as rimraf from 'rimraf';
 import {
   getNpmRegistry,
   getUnpkgHost,
@@ -13,8 +13,6 @@ import {
   getNpmTarball,
   getAndExtractTarball,
 } from '../index';
-
-const rimraf = import('rimraf');
 
 const defaultRegistry = 'https://registry.npm.taobao.org';
 

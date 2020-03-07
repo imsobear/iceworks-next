@@ -1324,14 +1324,6 @@
   dependencies:
     fs-extra "^8.1.0"
 
-"@iceworks/config@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@iceworks/config/-/config-1.0.5.tgz#0f5d4ccac25cecfd040add6a504b0386cc3d5064"
-  integrity sha512-gGNB2QO1YPrxUwV+9FcAIUsib+kn71cs2Qre8nfTQR2ezDq7loQ9zm3tSCkobadhnQDzQmQ7zvU54MImTTJLeQ==
-  dependencies:
-    fs-extra "^8.1.0"
-    user-home "^2.0.0"
-
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.0.0.tgz#10602de5570baea82f8afbfa2630b24e7a8cfe5b"

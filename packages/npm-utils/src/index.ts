@@ -1,13 +1,12 @@
+import * as fs from 'fs';
+import * as path from 'path';
+import * as zlib from 'zlib';
+import * as tar from 'tar';
+import * as semver from 'semver';
+import * as request from 'request-promise';
+import * as mkdirp from 'mkdirp';
+import * as progress from 'request-progress';
 import log from './log';
-
-const request = import('request-promise');
-const semver = import('semver');
-const fs = import('fs');
-const mkdirp = import('mkdirp');
-const path = import('path');
-const progress = import('request-progress');
-const zlib = import('zlib');
-const tar = import('tar');
 
 const cacheData = {};
 
@@ -62,7 +61,7 @@ function getAndExtractTarball(
     )
       .on('progress', progressFunc)
       .on('error', reject)
-      .pipe(zlib.Unzip())
+      .pipe(zlib.createGunzip())
       .pipe(new tar.Parse())
       .on('entry', (entry) => {
         if (entry.type === 'Directory') {
