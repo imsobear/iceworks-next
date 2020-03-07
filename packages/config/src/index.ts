@@ -17,7 +17,9 @@ function getConfig(): IConfig {
     npmClient: 'npm',
     registry: 'https://registry.npmjs.org',
   };
-  fse.ensureFileSync(configPath);
+  if (!fse.existsSync(configPath)) {
+    fse.writeJSONSync(configPath, {});
+  }
   const config: IConfig = fse.readJSONSync(configPath);
   const result = {...defaultConfig, ...config};
 
