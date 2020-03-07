@@ -3,7 +3,11 @@
   "version": "1.0.1",
   "main": "lib/index.js",
   "dependencies": {
-    "fs-extra": "^8.1.0"
+    "fs-extra": "^8.1.0",
+    "user-home": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^8.1.0"
   },
   "publishConfig": {
     "access": "public"

@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "workspaces": [
     "packages/*",
-    "extensions/*",
     "app"
   ],
   "scripts": {
@@ -26,8 +25,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "npm run lint",
-      "pre-commit": "lint-staged"
+      "pre-push": "npm run lint"
     }
   },
   "lint-staged": {

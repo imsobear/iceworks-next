@@ -48,3 +48,17 @@ Directory:
 │   └── config
 └── scripts
 ```
+
+## VS Code extensions
+
+开发过程比较独立，不放在 yarn workspace 中，插件自己管理依赖即可。
+
+但是依旧放在 lerna 里，方便 link packages。
+
+发布插件：
+
+```
+$ npm i -g vsce
+$ cd extensions/example
+$ vsce publish
+```
