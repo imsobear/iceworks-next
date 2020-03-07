@@ -1,7 +1,7 @@
 import * as ora from 'ora';
 import {
   isAliNpm, getNpmTarball, getAndExtractTarball, log,
-} from 'ice-npm-utils';
+} from '@iceworks/npm-utils';
 import formatProject from './fommatProject';
 import checkEmpty from './checkEmpty';
 

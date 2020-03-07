@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as fse from 'fs-extra';
 import {
   checkAliInternal, log,
-} from 'ice-npm-utils';
+} from '@iceworks/npm-utils';
 
 export default async function formatProject(projectDir: string): Promise<void> {
   await fse.remove(path.join(projectDir, 'build'));

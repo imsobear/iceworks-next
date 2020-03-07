@@ -1,11 +1,9 @@
 {
   "files": [],
   "references": [
-    {
-      "path": "packages/add-block"
-    },
-    {
-      "path": "packages/config"
-    },
+    {"path": "packages/npm-utils"},
+    {"path": "packages/config"},
+    {"path": "packages/block-add"},
+    {"path": "packages/project-generate"}
   ]
 }
