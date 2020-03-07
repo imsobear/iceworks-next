@@ -9,7 +9,7 @@
   "scripts": {
     "setup": "lerna clean --yes && npm run packages:build && npm run link",
     "link": "lerna link",
-    "test": "jest",
+    "test": "NODE_ENV=unittest LOG_LEVEL=verbose jest",
     "install:deps": "rm -rf node_modules && ELECTRON_MIRROR=https://cdn.npm.taobao.org/dist/electron/ SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ yarn install --registry=http://registry.npm.taobao.org",
     "packages:watch": "ts-node ./scripts/watch.ts",
     "packages:build": "npm run packages:clean && ts-node ./scripts/build.ts",
@@ -55,6 +55,7 @@
     "glob": "^7.1.6",
     "husky": "^4.2.3",
     "jest": "^25.1.0",
+    "jest-extended": "^0.11.5",
     "lerna": "^3.20.2",
     "lint-staged": "^10.0.8",
     "nsfw": "^1.2.7",

@@ -1,0 +1,20 @@
+{
+  "name": "@iceworks/project-generate",
+  "version": "0.1.0",
+  "description": "generator project",
+  "files": [
+    "lib/"
+  ],
+  "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "@iceworks/npm-utils": "^0.1.0",
+    "ora": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^8.0.1"
+  }
+}
