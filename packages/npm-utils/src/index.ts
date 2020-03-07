@@ -1,13 +1,13 @@
 import log from './log';
 
-const request = require('request-promise');
-const semver = require('semver');
-const fs = require('fs');
-const mkdirp = require('mkdirp');
-const path = require('path');
-const progress = require('request-progress');
-const zlib = require('zlib');
-const tar = require('tar');
+const request = import('request-promise');
+const semver = import('semver');
+const fs = import('fs');
+const mkdirp = import('mkdirp');
+const path = import('path');
+const progress = import('request-progress');
+const zlib = import('zlib');
+const tar = import('tar');
 
 const cacheData = {};
 
@@ -185,7 +185,7 @@ function isAliNpm(npmName?: string): boolean {
   return /^(@alife|@ali|@alipay|@kaola)\//.test(npmName);
 }
 
-function getNpmRegistry(npmName: string = ''): string {
+function getNpmRegistry(npmName = ''): string {
   if (process.env.REGISTRY) {
     return process.env.REGISTRY;
   }
@@ -197,7 +197,7 @@ function getNpmRegistry(npmName: string = ''): string {
   return 'https://registry.npm.taobao.org';
 }
 
-function getUnpkgHost(npmName: string = ''): string {
+function getUnpkgHost(npmName = ''): string {
   if (process.env.UNPKG) {
     return process.env.UNPKG;
   }
@@ -209,7 +209,7 @@ function getUnpkgHost(npmName: string = ''): string {
   return 'https://unpkg.com';
 }
 
-function getNpmClient(npmName: string = ''): string {
+function getNpmClient(npmName = ''): string {
   if (process.env.NPM_CLIENT) {
     return process.env.NPM_CLIENT;
   }

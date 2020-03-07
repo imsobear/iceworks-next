@@ -14,7 +14,7 @@ import {
   getAndExtractTarball,
 } from '../index';
 
-const rimraf = require('rimraf');
+const rimraf = import('rimraf');
 
 const defaultRegistry = 'https://registry.npm.taobao.org';
 
