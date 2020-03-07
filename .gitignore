@@ -12,6 +12,7 @@ node_modules
 .happypack
 coverage/
 tmp/
+.tmp/
 
 packages/*/lib/
 app/main_dist/
