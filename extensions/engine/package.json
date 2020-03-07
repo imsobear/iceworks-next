@@ -4,7 +4,7 @@
   "displayName": "iceworks engine",
   "publisher": "ICE",
   "description": "iceworks engine balabala",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "engines": {
     "vscode": "^1.42.0"
   },
@@ -79,6 +79,6 @@
     "vscode-test": "^1.3.0"
   },
   "dependencies": {
-    "@iceworks/config": "^1.0.3"
+    "@iceworks/config": "^1.0.4"
   }
 }
