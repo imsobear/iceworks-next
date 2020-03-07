@@ -6,6 +6,9 @@ demo/
 
 # node 覆盖率文件
 coverage/
+node_modules
+extensions/*/out
+.vscode-test
 
 # 忽略文件
 **/*-min.js
