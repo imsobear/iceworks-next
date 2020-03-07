@@ -1,7 +1,7 @@
 {
   "name": "@iceworks/app",
   "private": true,
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "main_dist/index.js",
   "publishConfig": {
     "access": "public"

@@ -1,6 +1,6 @@
 {
   "name": "@iceworks/config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "lib/index.js",
   "dependencies": {
     "fs-extra": "^8.1.0",
@@ -12,5 +12,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "ec669100d861fb11fb21509b5e5e4ac74789cf0f"
+  "gitHead": "ccb10e6adc8071c1b0e58ceac110ede6560e8375"
 }
