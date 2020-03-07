@@ -1,7 +1,7 @@
 {
   "name": "@iceworks/app",
   "private": true,
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "main_dist/index.js",
   "publishConfig": {
     "access": "public"
@@ -9,7 +9,7 @@
   "gitHead": "c4f67067432649f113ba07612c93547a8cb5332f",
   "dependencies": {
     "@iceworks/add-block": "^1.0.5",
-    "@iceworks/config": "^1.0.4",
+    "@iceworks/config": "^1.0.5",
     "fs-extra": "^8.1.0",
     "url-parse": "^1.4.7"
   },
