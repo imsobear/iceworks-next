@@ -59,4 +59,6 @@ $ cd extensions/example
 $ vsce publish
 ```
 
-如何统一 link 需要看下~
+## TODO
+
+- extensions 下 link packages
