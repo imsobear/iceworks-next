@@ -23,12 +23,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "iceworks.start",
-        "title": "iceworks.start"
-      },
-      {
-        "command": "iceworks.build",
-        "title": "iceworks.build"
+        "command": "iceworks.example",
+        "title": "iceworks.example"
       }
     ]
   },
