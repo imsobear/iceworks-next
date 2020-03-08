@@ -3,6 +3,7 @@ import React, { ReactElement, useEffect, useState } from 'react';
 
 // TODO 根据 config 获取物料的配置信息
 import MaterialGroup, { IMaterialItem } from '@/components/MaterialGroup';
+import Nothing from '@/components/Nothing';
 import { Loading, Notification, Search, Tab } from '@alifd/next';
 
 import styles from './index.module.scss';
@@ -16,7 +17,7 @@ interface IMaterialData {
 }
 
 // https://ice.alicdn.com/assets/materials/react-materials.json
-const Material = (): ReactElement => {
+export default function Material(): ReactElement {
   const [materialData, setMaterialData] = useState<IMaterialData>({});
   const [tabActive, setTabActive] = useState<string>('scaffold');
   const [keyword, setKeyword] = useState('');
@@ -74,26 +75,20 @@ const Material = (): ReactElement => {
           {scaffolds.length > 0 ? (
             <MaterialGroup dataSource={scaffolds} showDownload />
           ) : (
-            <div className={styles.notFound}>未找到 {keyword} 相关的物料</div>
+            <Nothing>暂无相关物料</Nothing>
           )}
         </Tab.Item>
         <Tab.Item title='区块' key='block'>
-          {blocks.length > 0 ? (
-            <MaterialGroup dataSource={blocks} />
-          ) : (
-            <div className={styles.notFound}>未找到 {keyword} 相关的物料</div>
-          )}
+          {blocks.length > 0 ? <MaterialGroup dataSource={blocks} /> : <Nothing>暂无相关物料</Nothing>}
         </Tab.Item>
         <Tab.Item title='业务组件' key='component'>
           {components.length > 0 ? (
             <MaterialGroup dataSource={components} previewText='文档' />
           ) : (
-            <div className={styles.notFound}>未找到 {keyword} 相关的物料</div>
+            <Nothing>暂无相关物料</Nothing>
           )}
         </Tab.Item>
       </Tab>
     </div>
   );
-};
-
-export default Material;
+}
