@@ -1,4 +1,7 @@
-import { get, set, remove, IConfig} from '..';
+import * as path from 'path';
+import { get, set, remove, IConfig, setConfigPath } from '..';
+
+setConfigPath(path.join(__dirname, 'tmp/cli-config.json'));
 
 test('set normal', async () => {
   const unpkgHost = 'https://unpkg.com/';
@@ -9,7 +12,6 @@ test('set normal', async () => {
   remove('unpkgHost');
   expect(get('unpkgHost')).toBe(undefined);
 });
-
 
 test('get list', async () => {
   const unpkgHost = 'https://unpkg.com/';

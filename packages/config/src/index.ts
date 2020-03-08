@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as fse from 'fs-extra';
 import * as userHome from 'user-home';
 
-const configPath: string = path.join(userHome || __dirname, '.iceworks/cli-config.json');
+let configPath: string = path.join(userHome || __dirname, '.iceworks/cli-config.json');
 
 export interface IConfig {
   npmClient?: string;
@@ -12,12 +12,20 @@ export interface IConfig {
   'fusion-token-ali'?: string;
 }
 
+export function setConfigPath(cfgPath: string): void {
+  if (process.env.NODE_ENV !== 'unittest') {
+    throw new Error('Not allowed!');
+  }
+  configPath = cfgPath;
+}
+
 function getConfig(): IConfig {
   const defaultConfig: IConfig = {
     npmClient: 'npm',
     registry: 'https://registry.npmjs.org',
   };
   if (!fse.existsSync(configPath)) {
+    fse.ensureFileSync(configPath);
     fse.writeJSONSync(configPath, {});
   }
   const config: IConfig = fse.readJSONSync(configPath);
