@@ -69,7 +69,9 @@ export default function Material(): ReactElement {
         onChange={(key: string): void => {
           setTabActive(key);
         }}
-        extra={<Search shape='simple' size='medium' placeholder='请输入关键字查找物料' onChange={searchHandler} />}
+        extra={
+          <Search shape='simple' size='medium' placeholder='请输入关键字查找物料' onChange={searchHandler} hasClear />
+        }
       >
         <Tab.Item title='模板' key='scaffold'>
           {scaffolds.length > 0 ? (
