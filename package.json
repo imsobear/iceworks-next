@@ -3,22 +3,22 @@
   "private": true,
   "version": "1.0.0",
   "workspaces": [
-    "packages/*",
-    "app"
+    "packages/*"
   ],
   "scripts": {
     "setup": "lerna clean --yes && npm run packages:build && npm run link",
     "link": "lerna link",
     "test": "NODE_ENV=unittest LOG_LEVEL=verbose jest",
-    "install:deps": "rm -rf node_modules && ELECTRON_MIRROR=https://cdn.npm.taobao.org/dist/electron/ SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ yarn install --registry=http://registry.npm.taobao.org",
+    "install:deps": "rm -rf node_modules &&  yarn install --registry=http://registry.npm.taobao.org && yarn run install:app:deps",
+    "install:app:deps": "rm -rf ./app/node_modules && cd app && ELECTRON_MIRROR=https://cdn.npm.taobao.org/dist/electron/ SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ yarn install --registry=http://registry.npm.taobao.org",
     "packages:watch": "ts-node ./scripts/watch.ts",
     "packages:build": "npm run packages:clean && ts-node ./scripts/build.ts",
     "packages:clean": "rm -rf ./packages/*/lib",
     "publish": "npm run packages:build && lerna publish --no-git-tag-version",
     "publish:beta": "npm run packages:build && lerna publish --dist-tag beta --no-git-tag-version",
-    "app:start": "electron ./app",
-    "app:build": "concurrently 'tsc --build ./app/main/tsconfig.json' 'cd app && icejs build'",
-    "app:watch": "concurrently 'tsc --build ./app/main/tsconfig.json -w' 'cd app && icejs start'",
+    "app:start": "cd app && npx electron ./",
+    "app:build": "concurrently 'tsc --build ./app/main/tsconfig.json' 'cd app && npx icejs build'",
+    "app:watch": "concurrently 'tsc --build ./app/main/tsconfig.json -w' 'cd app && npx icejs start'",
     "lint": "eslint --cache --ext .ts,.tsx ./",
     "coverage": "codecov"
   },
@@ -48,7 +48,6 @@
     "codecov": "^3.6.5",
     "commitlint": "^8.3.5",
     "concurrently": "^5.1.0",
-    "electron": "8.1.0",
     "eslint": "^6.8.0",
     "execa": "^4.0.0",
     "fs-extra": "^8.1.0",
