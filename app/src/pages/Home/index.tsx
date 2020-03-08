@@ -3,7 +3,7 @@ import React, { ReactElement, useEffect, useState } from 'react';
 
 // TODO 根据 config 获取物料的配置信息
 import MaterialGroup, { IMaterialItem } from '@/components/MaterialGroup';
-import { Notification, Search, Tab } from '@alifd/next';
+import { Loading, Notification, Search, Tab } from '@alifd/next';
 
 import styles from './index.module.scss';
 
@@ -20,15 +20,17 @@ const Material = (): ReactElement => {
   const [materialData, setMaterialData] = useState<IMaterialData>({});
   const [tabActive, setTabActive] = useState<string>('scaffold');
   const [keyword, setKeyword] = useState('');
-
+  const [isLoading, setLoading] = useState(true);
   useEffect(() => {
     axios({
       url: 'https://ice.alicdn.com/assets/materials/react-materials.json',
     })
       .then(({ data }) => {
         setMaterialData(data);
+        setLoading(false);
       })
       .catch(() => {
+        setLoading(false);
         Notification.error({
           title: '加载数据失败',
           content: '请确认网络已链接',
@@ -36,7 +38,7 @@ const Material = (): ReactElement => {
       });
   }, []);
 
-  function searchHandler(value): void {
+  function searchHandler(value: string): void {
     setKeyword(value);
   }
 
@@ -53,6 +55,9 @@ const Material = (): ReactElement => {
   blocks = filterByKeyword(blocks);
   components = filterByKeyword(components);
   scaffolds = filterByKeyword(scaffolds);
+  if (isLoading) {
+    return <Loading style={{ display: 'block', height: '100vh' }} />;
+  }
 
   return (
     <div className={styles.materialWrapper}>
@@ -69,21 +74,21 @@ const Material = (): ReactElement => {
           {scaffolds.length > 0 ? (
             <MaterialGroup dataSource={scaffolds} showDownload />
           ) : (
-            <div className={styles.notFound}>未找到与 {keyword} 相关的物料</div>
+            <div className={styles.notFound}>未找到 {keyword} 相关的物料</div>
           )}
         </Tab.Item>
         <Tab.Item title='区块' key='block'>
           {blocks.length > 0 ? (
             <MaterialGroup dataSource={blocks} />
           ) : (
-            <div className={styles.notFound}>未找到与 {keyword} 相关的物料</div>
+            <div className={styles.notFound}>未找到 {keyword} 相关的物料</div>
           )}
         </Tab.Item>
         <Tab.Item title='业务组件' key='component'>
           {components.length > 0 ? (
             <MaterialGroup dataSource={components} previewText='文档' />
           ) : (
-            <div className={styles.padding}>未找到与 {keyword} 相关的物料</div>
+            <div className={styles.notFound}>未找到 {keyword} 相关的物料</div>
           )}
         </Tab.Item>
       </Tab>
