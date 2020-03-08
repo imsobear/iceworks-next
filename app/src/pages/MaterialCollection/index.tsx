@@ -20,6 +20,8 @@ const Material = (): ReactElement => {
   const { title = '', data: materialData } = currentCollection || {};
   let { blocks = [], components = [], scaffolds = [] } = materialData || {};
 
+  // TODO: 处理异常 error
+
   function searchHandler(value): void {
     setKeyword(value);
   }
