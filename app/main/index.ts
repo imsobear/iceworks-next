@@ -1,8 +1,8 @@
 // @ts-nocheck
 
+import { app, BrowserWindow } from 'electron';
 // Modules to control application life and create native browser window
 import * as path from 'path';
-import { app, BrowserWindow } from 'electron';
 
 function createWindow(): BrowserWindow {
   // Create the browser window.

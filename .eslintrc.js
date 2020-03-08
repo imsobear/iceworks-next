@@ -5,5 +5,6 @@ module.exports = deepmerge(tslint, {
     jest: true
   },
   rules: {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", '.tsx'] }]
   },
 });

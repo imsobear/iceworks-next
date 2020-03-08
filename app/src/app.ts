@@ -1,3 +1,5 @@
+import '@alifd/next/index.scss';
+
 import { createApp } from 'ice';
 
 const appConfig = {
