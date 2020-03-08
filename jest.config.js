@@ -5,5 +5,8 @@ module.exports = {
     'lib/',
     '__tests__/tmp/'
   ],
-  preset: 'ts-jest'
+  preset: 'ts-jest',
+  setupFilesAfterEnv: [
+    'jest-extended'
+  ]
 };

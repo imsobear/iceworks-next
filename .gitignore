@@ -12,9 +12,12 @@ node_modules
 .happypack
 coverage/
 tmp/
+.tmp/
 
 packages/*/lib/
 app/main_dist/
 app/build/
+extensions/*/out
+.vscode-test
 
 **/.ice/

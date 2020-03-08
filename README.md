@@ -5,9 +5,26 @@
 <a href="https://codecov.io/gh/imsobear/iceworks-next"><img src="https://img.shields.io/codecov/c/github/imsobear/iceworks-next/master.svg" alt="Test Coverage" /></a>
 <a href="https://gitter.im/imsobear/iceworks-next"><img src="https://badges.gitter.im/imsobear/iceworks-next.svg" alt="Gitter" /></a>
 
+## Usage
+
+### packages
+
+- @iceworks/npm-utils：npm 相关方法
+- @iceworks/config：管理配置
+- @iceworks/project-generate：生成项目
+- @iceworks/block-add：TODO，添加区块
+
+### extensions
+
+- iceworks engine: install/start/build
+- iceworks exmaple: just example
+- 添加页面
+- 添加区块
+- 依赖管理
+
 ## Develop
 
-CLI:
+### command
 
 ```bash
 # install all deps
@@ -37,7 +54,7 @@ $ yarn workspace @iceworks/app add <npmName>
 $ yarn workspace @iceworks/app add <npmName> --registry https://registry.yarnpkg.com
 ```
 
-Directory:
+### Directory
 
 ```md
 .
@@ -48,3 +65,17 @@ Directory:
 │   └── config
 └── scripts
 ```
+
+### VS Code extensions
+
+开发过程比较独立，不放在 yarn workspace 中，插件自己管理依赖即可。
+
+```bash
+$ npm i -g vsce
+$ cd extensions/example
+$ vsce publish
+```
+
+## TODO
+
+- extensions 下 link packages
