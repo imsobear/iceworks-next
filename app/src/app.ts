@@ -2,7 +2,7 @@ import '@alifd/next/index.scss';
 
 import { createApp } from 'ice';
 
-import * as  iceworksConfig from '@iceworks/config';
+import * as iceworksConfig from '@iceworks/config';
 
 const config = iceworksConfig.get();
 
@@ -14,7 +14,7 @@ const appConfig = {
   },
   router: {
     type: 'browser',
-  }
+  },
 };
 
 createApp(appConfig);

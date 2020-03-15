@@ -1,5 +1,5 @@
-import * as path from 'path';
 import * as fse from 'fs-extra';
+import * as path from 'path';
 import * as userHome from 'user-home';
 
 let configPath: string = path.join(userHome || __dirname, '.iceworks/cli-config.json');
@@ -33,23 +33,31 @@ function getConfig(): IConfig {
   const defaultConfig: IConfig = {
     npmClient: 'npm',
     registry: 'https://registry.npmjs.org',
-    materialCollections: [{
-      url: 'https://ice.alicdn.com/assets/materials/react-materials.json',
-      title: '官方物料源',
-      description: '基于 icejs & Fusion 组件',
-      official: true,
-    }, {
-      url: 'https://ice.alicdn.com/assets/materials/vue-materials.json',
-      title: 'Vue 物料源',
-      description: '基于 Vue CLI & ElementUI 组件',
-      official: true,
-    }]
+    materialCollections: [
+      {
+        url: 'https://ice.alicdn.com/assets/materials/react-materials.json',
+        title: '官方物料源',
+        description: '基于 icejs & Fusion 组件',
+        official: true,
+      },
+      {
+        url: 'https://ice.alicdn.com/assets/materials/vue-materials.json',
+        title: 'Vue 物料源',
+        description: '基于 Vue CLI & ElementUI 组件',
+        official: true,
+      },
+    ],
   };
-  if (!fse.existsSync(configPath)) {
+
+  let config: IConfig;
+  try {
+    // 文件虽然存在, 可是内容存在预发错误
+    config = fse.readJSONSync(configPath);
+  } catch (e) {
     fse.ensureFileSync(configPath);
     fse.writeJSONSync(configPath, {});
+    config = {};
   }
-  const config: IConfig = fse.readJSONSync(configPath);
 
   Object.keys(defaultConfig).forEach((key) => {
     if (key === 'materialCollections') {
