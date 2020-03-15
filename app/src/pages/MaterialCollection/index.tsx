@@ -1,7 +1,8 @@
-import React, { ReactElement, useState, useEffect } from 'react';
 import { helpers, store } from 'ice';
+import React, { ReactElement, useEffect, useState } from 'react';
+
 import MaterialGroup from '@/components/MaterialGroup';
-import { Search, Tab, Loading } from '@alifd/next';
+import { Loading, Search, Tab } from '@alifd/next';
 
 import styles from './index.module.scss';
 
@@ -25,7 +26,7 @@ const Material = (): ReactElement => {
   function searchHandler(value): void {
     setKeyword(value);
   }
-  function filterByKeyword(arr) {
+  function filterByKeyword(arr): object[] {
     return arr.filter((item) => {
       return (
         item.title.indexOf(keyword) > -1 || item.name.indexOf(keyword) > -1 || item.description.indexOf(keyword) > -1
@@ -40,7 +41,7 @@ const Material = (): ReactElement => {
   return (
     <div className={styles.materialWrapper}>
       <h1 className={styles.materialTitler}>我的物料-{title}</h1>
-      <Loading visible={isLoading} style={{width: '100%'}}>
+      <Loading visible={isLoading} style={{ width: '100%' }}>
         <Tab
           contentStyle={{ height: 'calc(100vh - 140px)', overflowY: 'auto' }}
           activeKey={tabActive}
