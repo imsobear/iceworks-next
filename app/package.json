@@ -6,9 +6,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "c4f67067432649f113ba07612c93547a8cb5332f",
   "dependencies": {
     "@alifd/next": "^1.19.17",
+    "@alifd/theme-design-pro": "^0.6.0",
     "@iceworks/add-block": "^1.0.5",
     "@iceworks/config": "^1.0.5",
     "@types/axios": "0.14.0",
@@ -21,6 +21,8 @@
     "url-parse": "^1.4.7"
   },
   "devDependencies": {
+    "build-plugin-fusion": "^0.1.0",
+    "build-plugin-moment-locales": "^0.1.0",
     "@types/electron": "^1.6.10",
     "@types/react": "16.9.23",
     "ice.js": "^1.0.12"

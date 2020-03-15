@@ -1,5 +1,7 @@
-import Home from '@/pages/Home';
-import Layout from '@/layouts/Layout';
+import Layout from '@/layouts';
+import MaterialCollection from '@/pages/MaterialCollection';
+import Projects from '@/pages/Projects';
+import Settings from '@/pages/Settings';
 
 export default [
   {
@@ -7,14 +9,19 @@ export default [
     component: Layout,
     children: [
       {
-        path: '/home',
+        path: '/',
         exact: true,
-        component: Home
+        component: Projects
       },
       {
-        path: '/',
-        // 重定向
-        redirect: '/home'
+        path: '/materialCollection',
+        exact: true,
+        component: MaterialCollection,
+      },
+      {
+        path: '/Settings',
+        exact: true,
+        component: Settings,
       }
     ]
   }

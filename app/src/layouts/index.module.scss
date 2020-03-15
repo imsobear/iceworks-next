@@ -1,0 +1,24 @@
+
+.layout {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.aside {
+  width: 160px;
+  background-color: $color-brand1-6;
+  flex: 0 0 160px;
+}
+
+.main {
+  flex: auto;
+}
+
+:global {
+  .iceworks-nav .next-menu-item.next-nav-item.next-opened {
+    background-color: inherit !important;
+  }
+}
