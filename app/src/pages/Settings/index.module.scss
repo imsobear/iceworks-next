@@ -1,0 +1,80 @@
+@import '@/variables.scss';
+
+.pageWrapper {
+  padding: 10px;
+}
+
+.pageTitle {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 1.6em;
+}
+
+.notFound {
+  padding: 20px;
+  text-align: center;
+}
+
+.materialItem {
+  margin-top: 20px;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.materialItemHeader {
+  display: flex;
+  align-items: center;
+}
+
+.materialItemFooter {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.materialItemTitle {
+  font-size: 16px;
+  font-weight: bold;
+  color: $colorPrimary;
+  line-height: 30px;
+}
+
+.materialItemFlag {
+  font-size: 11px;
+  padding: 1px 4px;
+  border-radius: 2px;
+  border: 1px solid #ff6348;
+  color: #ff6348;
+  white-space: nowrap;
+}
+.materialItemDesc {
+  color: rgba(0, 0, 0, 0.75);
+  padding-left: 1em;
+  flex: auto;
+}
+
+.materialItemUrl {
+  font-size: 11px;
+  color: #ccc;
+  word-break: break-all;
+}
+
+.radioForm {
+  display: flex;
+  flex-direction: row;
+  dt {
+    font-weight: bold;
+    width: 15%;
+    text-align: right;
+  }
+  dd {
+    flex: auto;
+  }
+}

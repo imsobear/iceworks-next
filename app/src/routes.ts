@@ -1,7 +1,7 @@
 import Layout from '@/layouts';
+import MaterialCollection from '@/pages/MaterialCollection';
 import Projects from '@/pages/Projects';
 import Settings from '@/pages/Settings';
-import MaterialCollection from '@/pages/MaterialCollection';
 
 export default [
   {

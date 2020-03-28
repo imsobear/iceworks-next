@@ -20,7 +20,8 @@
     "app:build": "concurrently 'tsc --build ./app/main/tsconfig.json' 'cd app && npx icejs build'",
     "app:watch": "concurrently 'tsc --build ./app/main/tsconfig.json -w' 'cd app && npx icejs start'",
     "lint": "eslint --cache --ext .ts,.tsx ./",
-    "coverage": "codecov"
+    "coverage": "codecov",
+    "postinstall": "cd app && yarn install"
   },
   "husky": {
     "hooks": {
